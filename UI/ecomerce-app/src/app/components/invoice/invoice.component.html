@@ -1,0 +1,66 @@
+<div class="container my-4">
+    <div class="card shadow-sm">
+      <div class="card-header bg-dark text-white">
+          <h2>Facturación</h2>
+      </div>
+
+
+     <div class="card-body">
+
+      <!-- 🔍 SECCIÓN DE FILTROS -->
+      <div class="row g-3 mb-4 p-3 border rounded bg-light">
+        <h5 class="text-secondary"><i class="fas fa-filter me-1"></i> Filtrar Facturas</h5>
+
+        <!-- Filtro por Cliente -->
+        <div class="col-md-4">
+          <label class="form-label">Cliente</label>
+          <input type="text" class="form-control" placeholder="Buscar por cliente..." [(ngModel)]="filtroCliente" (input)="aplicarFiltros()">
+        </div>
+
+        <!-- Filtro por Empresa -->
+        <div class="col-md-4">
+          <label class="form-label">Empresa</label>
+          <input type="text" class="form-control" placeholder="Buscar por empresa..." [(ngModel)]="filtroEmpresa" (input)="aplicarFiltros()">
+        </div>
+
+        <!-- Filtro por Fecha de Emisión -->
+        <div class="col-md-4">
+          <label class="form-label">Fecha de Emisión</label>
+          <input type="date" class="form-control" [(ngModel)]="filtroFecha" (change)="aplicarFiltros()">
+        </div>
+      </div>
+
+
+       @if (facturasFiltradas.length > 0) {
+        @for (invoice of facturasFiltradas; track invoice.id) {
+          <div class="card mb-4 border-secondary">
+            <div class="card-body">
+
+              <invoice-view [id]="invoice.id" [name]="invoice.name" [numero]="invoice.numero"></invoice-view>
+
+              <div class="row my-3">
+                <div class="col">
+                  <client-view [client]="invoice.cliente"></client-view>
+                </div>
+                <div class="col">
+                  <company-view [company]="invoice.empresa"></company-view>
+                </div>
+              </div>
+
+              <list-items [items]="invoice.items"></list-items>
+
+              <total [total]="invoice.montoTotal"></total>
+
+            </div>
+          </div>
+        }
+      } @else {
+        <!-- Mensaje si no hay coincidencias -->
+        <div class="alert alert-warning text-center" role="alert">
+          No se encontraron facturas que coincidan con los filtros de búsqueda.
+        </div>
+      }
+
+  </div>
+</div>
+

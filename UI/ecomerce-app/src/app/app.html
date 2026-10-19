@@ -1,0 +1,91 @@
+
+
+<!-- <button (click)="setVisible()" class="btn btn-primary">
+  {{visible ? 'Ocultar' : 'Mostrar'}} usuarios
+</button>
+@if(visible){
+
+  <h2>{{title}}</h2>
+  <div>Total: {{counter}}</div>
+
+
+@if(users !=undefined && users.length>0){
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(user of users;track $index){
+      <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{user}}</td>
+      </tr>
+    }
+  </tbody>
+</table>
+}@else{No hay usuarios disponibles}
+}
+@else{
+  <h2>Lo sentimos no esta disponible la pagina</h2>
+}
+<app-counter [title]="subtitle" (counterEmit)="setCounter($event)"></app-counter> -->
+<!-- <app-invoice></app-invoice> -->
+
+
+<!-- @if (!isLoggedIn) {
+
+  <router-outlet></router-outlet>
+}
+
+@else {
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand" routerLink="/facturas" style="cursor: pointer;"><i class="fas fa-cubes me-2"></i>Mi Sistema</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/registrar-factura" routerLinkActive="active">
+            <i class="fas fa-box-open me-1"></i> Registrar Facturas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/facturas" routerLinkActive="active">
+            <i class="fas fa-file-invoice-dollar me-1"></i> Ver Facturas
+          </a>
+        </li>
+      </ul>
+
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-danger btn-sm mt-1" (click)="cerrarSesion()">
+            <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>  -->
+
+<!-- app.component.html -->
+<!-- <app-navbar></app-navbar> -->
+
+<div class="container-fluid px-0">
+  <!-- ¡Esta etiqueta es obligatoria para que aparezcan tus vistas! -->
+  <router-outlet></router-outlet>
+</div>
+
+<!-- } -->

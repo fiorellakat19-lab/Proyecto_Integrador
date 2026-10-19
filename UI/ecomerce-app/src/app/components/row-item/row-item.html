@@ -1,0 +1,10 @@
+
+            <td>{{item.id}}</td>
+            <td>{{item.producto}}</td>
+            <td>{{item.precio}}</td>
+            <td>{{item.cantidad}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="onRemove(item.id)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>

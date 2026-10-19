@@ -1,0 +1,40 @@
+
+<!-- Navbar fijo que siempre se verá cuando el usuario esté dentro del sistema -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 shadow-sm">
+  <a class="navbar-brand" routerLink="/facturas" style="cursor: pointer;">
+    <i class="fas fa-cubes me-2"></i>Ecomerce-Peru
+  </a>
+  <!-- 2. Botón Hamburguesa (Móvil): Aparece solo en pantallas pequeñas -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/registrar-factura" routerLinkActive="active">
+          <i class="fas fa-box-open me-1"></i> Registrar Facturas
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/facturas" routerLinkActive="active">
+          <i class="fas fa-file-invoice-dollar me-1"></i> Ver Facturas
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <button class="btn btn-outline-danger btn-sm mt-1" (click)="cerrarSesion()">
+          <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Contenedor donde Angular cambiará entre /facturas y /registrar-factura automáticamente -->
+<div class="container-fluid px-3 mt-4">
+  <router-outlet></router-outlet>
+</div>
